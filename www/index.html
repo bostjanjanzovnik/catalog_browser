@@ -1,23 +1,135 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Catalog Browser</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+
+        <link rel="stylesheet" type="text/css" href="js/libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/tables.css">
+        <script type="text/javascript" src="js/libs/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div data-role="page" id="tables-page">
+            <!-- glava -->
+            <div data-role="header">
+                <h1>Catalog Browser</h1>
+            </div>
+
+            <!-- vsebina strani -->
+            <div data-role="content">
+                <div data-role="tabs" id="tabs">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#table1-tab">Tabela 1</a></li>
+                            <li><a href="#table2-tab">Tabela 2</a></li>
+                            <li><a href="#table3-tab">Tabela 3</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- tab 1 -->
+                    <div id="table1-tab">
+                        <div role="main" class="ui-content">
+                            <table data-role="table" id="table1" data-mode="reflow" class="data-table ui-responsive table-stroke ui-table ui-table-reflow">
+                                <thead>
+                                    <tr>
+                                        <th>Model, delovna širina (cm)</th>
+                                        <th>Teža stroja (kg)</th>
+                                        <th>kW<br />KM</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">15<br />20</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">22<br />30</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">29<br />40</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">37<br />50</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">51<br />70</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">59<br />80</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">66<br />90</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">74<br />100</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">81<br />110</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">88<br />120</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">96<br />130</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">103<br />140</th>
+                                        <th class="power-th"></th>
+                                        <th class="power-th power-num">110<br />150</th>
+                                        <th class="power-th"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th><b>MUSL 110</b></th>
+                                        <td>190</td>
+                                        <td></td>
+                                        <td class="active-td"><div class="red-field-1"></div></td>
+                                        <td class="active-td"><div class="red-field-2">M</div></td>
+                                        <td class="active-td"><div class="red-field-3"></div></td>
+                                        <td class="active-td"><div class="red-field-4"></div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- tab 2 -->
+                    <div id="table2-tab">
+                        <h3>Tabela 2</h3>
+                    </div>
+
+                    <!-- tab 3 -->
+                    <div id="table3-tab">
+                        <h3>Tabela 3</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+
+        <!-- catalog page -->
+        <div data-role="page" id="catalog-page">
+            <!-- glava -->
+            <div data-role="header">
+                <h1>Catalog Browser</h1>
+            </div>
+
+            <div data-role="content">
+                <h1>PDF lister</h1>
+            </div>
     </body>
 </html>
