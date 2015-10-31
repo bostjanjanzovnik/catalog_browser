@@ -3,133 +3,1648 @@
     <head>
         <title>Catalog Browser</title>
         <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
         <link rel="stylesheet" type="text/css" href="js/libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
-        <link rel="stylesheet" type="text/css" href="css/tables.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/catalog.css">
         <script type="text/javascript" src="js/libs/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/libs/turn.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/catalog.js"></script>
     </head>
     <body>
-        <div data-role="page" id="tables-page">
-            <!-- glava -->
-            <div data-role="header">
-                <h1>Catalog Browser</h1>
-            </div>
-
-            <!-- vsebina strani -->
-            <div data-role="content">
-                <div data-role="tabs" id="tabs">
-                    <div data-role="navbar">
-                        <ul>
-                            <li><a href="#table1-tab">Tabela 1</a></li>
-                            <li><a href="#table2-tab">Tabela 2</a></li>
-                            <li><a href="#table3-tab">Tabela 3</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- tab 1 -->
-                    <div id="table1-tab">
-                        <div role="main" class="ui-content">
-                            <table data-role="table" id="table1" data-mode="reflow" class="data-table ui-responsive table-stroke ui-table ui-table-reflow">
-                                <thead>
-                                    <tr>
-                                        <th>Model, delovna širina (cm)</th>
-                                        <th>Teža stroja (kg)</th>
-                                        <th>kW<br />KM</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">15<br />20</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">22<br />30</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">29<br />40</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">37<br />50</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">51<br />70</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">59<br />80</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">66<br />90</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">74<br />100</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">81<br />110</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">88<br />120</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">96<br />130</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">103<br />140</th>
-                                        <th class="power-th"></th>
-                                        <th class="power-th power-num">110<br />150</th>
-                                        <th class="power-th"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th><b>MUSL 110</b></th>
-                                        <td>190</td>
-                                        <td></td>
-                                        <td class="active-td"><div class="red-field-1"></div></td>
-                                        <td class="active-td"><div class="red-field-2">M</div></td>
-                                        <td class="active-td"><div class="red-field-3"></div></td>
-                                        <td class="active-td"><div class="red-field-4"></div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- tab 2 -->
-                    <div id="table2-tab">
-                        <h3>Tabela 2</h3>
-                    </div>
-
-                    <!-- tab 3 -->
-                    <div id="table3-tab">
-                        <h3>Tabela 3</h3>
-                    </div>
+        <!-- LISTER PAGE -->
+        <div data-role="page" id="lister-page">
+            <div class="flipbook-viewport">
+                <div class="flipbook">
+                    <div id="page1" style="background-image:url(pages/page_1.jpg)"></div>
+                    <div id="page2" style="background-image:url(pages/page_2.jpg)"></div>
+                    <div id="page3" style="background-image:url(pages/page_3.jpg)"></div>
+                    <div id="page4" style="background-image:url(pages/page_4.jpg)"></div>
+                    <div id="page5" style="background-image:url(pages/page_5.jpg)"></div>
                 </div>
             </div>
         </div>
 
-        <!-- catalog page -->
+        <!-- TABLES PAGE -->
+        <div data-role="page" id="tables-page">
+            <!--<div data-role="header">
+                <h1>Tehnos Catalog Browser</h1>
+            </div>-->
+            <div data-role="content">
+                <div data-role="navbar" class="navbar" data-iconpos="right">
+                    <ul>
+                        <li><a href="#" id="tab_1" data-icon="grid">UNIVERZALI mulčer</a></li>
+                        <li><a href="#" id="tab_2" data-icon="grid">BOČNI mulčer + KOMBINACIJE</a></li>
+                        <li><a href="#" id="tab_3" data-icon="grid">TRAVNIŠKI mulčer + NAMENSKI mulčer</a></li>
+                    </ul>
+                </div>
+
+                <div id="table1-container">
+                    <div id="table1-images-container">
+                        <div class="table1-img">
+                            <div class="img1_1" id="page_1"><div class="img-title">MULS slim</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table1-img">
+                            <div class="img1_2" id="page_2"><div class="img-title">MUL lahki</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table1-img">
+                            <div class="img1_3" id="page_3"><div class="img-title">MU profi</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table1-img">
+                            <div class="img1_4" id="page_4"><div class="img-title">MP profi</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table1-img">
+                            <div class="img1_5" id="page_5"><div class="img-title">MPL lahki</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table1-img">
+                            <div class="img1_6" id="page_6"><div class="img-title">MUS</div><img src="img/test_img.png"></div>
+                        </div>
+                    </div>
+
+                    <table id="table1" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th class="model">Model, delovna širina (cm)</th>
+                                <th class="weight">Teža stroja (kg)</th>
+                                <th>kW<br />KM</th>
+                                <th colspan="2" style="width:300px">15<br />20</th>
+                                <th colspan="2">22<br />30</th>
+                                <th colspan="2">29<br />40</th>
+                                <th colspan="2">37<br />50</th>
+                                <th colspan="2">44<br />60</th>
+                                <th colspan="2">51<br />70</th>
+                                <th colspan="2">59<br />80</th>
+                                <th colspan="2">66<br />90</th>
+                                <th colspan="2">74<br />100</th>
+                                <th colspan="2">81<br />110</th>
+                                <th colspan="2">88<br />120</th>
+                                <th colspan="2">96<br />130</th>
+                                <th colspan="2">103<br />140</th>
+                                <th colspan="2">110<br />150</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="model"><b>MULS 110</b></th>
+                                <td class="weight">190</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 110</b></th>
+                                <td class="weight">304</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MULS 130</b></th>
+                                <td class="weight">210</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 130</b></th>
+                                <td class="weight">330</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 130</b></th>
+                                <td class="weight">451</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MULS 150</b></th>
+                                <td class="weight">230</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 150</b></th>
+                                <td class="weight">368</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUS 150</b></th>
+                                <td class="weight">442</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid" colspan="5"><div class="range-content-5">MUS</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 150</b></th>
+                                <td class="weight">493</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid" colspan="5"><div class="range-content-5">MU profi</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MULS 170</b></th>
+                                <td class="weight">250</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 170</b></th>
+                                <td class="weight">406</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUS 170</b></th>
+                                <td class="weight">507</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed" colspan="5"><div class="range-content-5">MUS</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 170</b></th>
+                                <td class="weight">538</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="6"><div class="range-content-6">MU profi</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 200</b></th>
+                                <td class="weight">444</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUS 200</b></th>
+                                <td class="weight">587</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUS</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 200</b></th>
+                                <td class="weight">586</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="6"><div class="range-content-6">MU profi</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MUL 220</b></th>
+                                <td class="weight">470</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 220</b></th>
+                                <td class="weight">626</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed" colspan="7"><div class="range-content-7">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MPL 250</b></th>
+                                <td class="weight">770</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="6"><div class="range-content-6">MPL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MP 250</b></th>
+                                <td class="weight">1020</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed" colspan="9"><div class="range-content-9">MPL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 250</b></th>
+                                <td class="weight">876</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MPL 280</b></th>
+                                <td class="weight">810</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="6"><div class="range-content-7">MPL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MP 280</b></th>
+                                <td class="weight">1108</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed" colspan="9"><div class="range-content-9">MP profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 280</b></th>
+                                <td class="weight">935</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 300</b></th>
+                                <td class="weight">1006</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="table2-container">
+                    <div id="table2-images-container">
+                        <div class="table2-img">
+                            <div class="img2_1" id="page_1"><div class="img-title">MB profi</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_2" id="page_2"><div class="img-title">MBL lahki</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_3" id="page_3"><div class="img-title">MBP profi</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_4" id="page_4"><div class="img-title">MBPL lahki</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_5" id="page_5"><div class="img-title">MB+MU</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_6" id="page_6"><div class="img-title">MBP+MU</div><img src="img/test_img.png"></div>
+                        </div>
+                        <div class="table2-img">
+                            <div class="img2_7" id="page_7"><div class="img-title">MU2Z+MU</div><img src="img/test_img.png"></div>
+                        </div>
+                    </div>
+
+                    <table id="table2_1" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th class="model">Model, delovna širina (cm)</th>
+                                <th class="weight">Min. teža<br />traktorja (kg)</th>
+                                <th class="weight">Teža<br />stroja<br />(kg)</th>
+                                <th>kW<br />KM</th>
+                                <th colspan="2">29<br />40</th>
+                                <th colspan="2" style="width:1000px">37<br />50</th>
+                                <th colspan="2" style="width:900px">44<br />60</th>
+                                <th colspan="2">51<br />70</th>
+                                <th colspan="2">59<br />80</th>
+                                <th colspan="2">66<br />90</th>
+                                <th colspan="2">74<br />100</th>
+                                <th colspan="2">81<br />110</th>
+                                <th colspan="2">88<br />120</th>
+                                <th colspan="2">96<br />130</th>
+                                <th colspan="2">103<br />140</th>
+                                <th colspan="2">110<br />150</th>
+                                <th colspan="2">118<br />160</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="model"><b>MBPL 150</b></th>
+                                <td class="weight">2500</td>
+                                <td class="weight">482</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MBPL lahki</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBL 150</b></th>
+                                <td class="weight">3000</td>
+                                <td class="weight">498</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MBL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBPL 170</b></th>
+                                <td class="weight">3000</td>
+                                <td class="weight">620</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid" colspan="5" style="width:120px"><div class="range-content-5">MBPL lahki</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBL 170</b></th>
+                                <td class="weight">3500</td>
+                                <td class="weight">528</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed" colspan="5" style="width:120px"><div class="range-content-5">MBL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MB 170</b></th>
+                                <td class="weight">4000</td>
+                                <td class="weight">847</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="6" style="width:140px"><div class="range-content-6">MB profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBPL 200</b></th>
+                                <td class="weight">3500</td>
+                                <td class="weight">658</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MBPL lahki</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBL 200</b></th>
+                                <td class="weight">4000</td>
+                                <td class="weight">555</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MBL lahki</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MB 200</b></th>
+                                <td class="weight">5000</td>
+                                <td class="weight">894</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MB profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 200</b></th>
+                                <td class="weight">4000</td>
+                                <td class="weight">1310</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MBP profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MB 220</b></th>
+                                <td class="weight">5000</td>
+                                <td class="weight">926</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="6" style="width:140px"><div class="range-content-6">MB profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 220</b></th>
+                                <td class="weight">4500</td>
+                                <td class="weight">1335</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MBP profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 250</b></th>
+                                <td class="weight">5000</td>
+                                <td class="weight">1375</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="8" style="width:180px"><div class="range-content-8">MBP profi</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 280</b></th>
+                                <td class="weight">5500</td>
+                                <td class="weight">1440</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field solid" colspan="8" style="width:180px"><div class="range-content-8">MBP profi</div></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table id="table2_2" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th class="model">Model</th>
+                                <th class="weight_1">Delovna<br />širina (cm)</th>
+                                <th class="weight_2">Teža<br />stroja<br />(kg)</th>
+                                <th>kW<br />KM</th>
+                                <th colspan="2" style="width:300px">110<br />150</th>
+                                <th colspan="2">118<br />160</th>
+                                <th colspan="2">125<br />170</th>
+                                <th colspan="2">132<br />180</th>
+                                <th colspan="2" style="width:300px">140<br />190</th>
+                                <th colspan="2">147<br />200</th>
+                                <th colspan="2">154<br />210</th>
+                                <th colspan="2">162<br />220</th>
+                                <th colspan="2">169<br />230</th>
+                                <th colspan="2">176<br />240</th>
+                                <th colspan="2">184<br />250</th>
+                                <th colspan="2">191<br />260</th>
+                                <th colspan="2">199<br />270</th>
+                                <th colspan="2">206<br />280</th>
+                                <th colspan="2">213<br />290</th>
+                                <th colspan="2">221<br />300</th>
+                                <th colspan="2">228<br />310</th>
+                                <th colspan="2">235<br />320</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="model"><b>MU 280</b></th>
+                                <td class="weight_1" rowspan="2">250</td>
+                                <td class="weight_2">935</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MB 220</b></th>
+                                <td class="weight_2">926</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MB profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 300</b></th>
+                                <td class="weight_1" rowspan="2">520</td>
+                                <td class="weight_2">1006</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MB 220</b></th>
+                                <td class="weight_2">926</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MB profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 280</b></th>
+                                <td class="weight_1" rowspan="2">560</td>
+                                <td class="weight_2">935</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="10" style="width:200px"><div class="range-content-10">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 280</b></th>
+                                <td class="weight_2">1440</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="10" style="width:200px"><div class="range-content-10">MBP profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 300</b></th>
+                                <td class="weight_1" rowspan="2">580</td>
+                                <td class="weight_2">1006</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="10" style="width:200px"><div class="range-content-10">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MBP 280</b></th>
+                                <td class="weight_2">1440</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="10" style="width:200px"><div class="range-content-10">MBP profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 280</b></th>
+                                <td class="weight_1" rowspan="2">840</td>
+                                <td class="weight_2">935</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="14" style="width:280px"><div class="range-content-14">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU2Z 840</b></th>
+                                <td class="weight_2">2465</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="14" style="width:280px"><div class="range-content-14">MU2Z profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU 300</b></th>
+                                <td class="weight_1" rowspan="2">900</td>
+                                <td class="weight_2">1006</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="14" style="width:280px"><div class="range-content-14">MU profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                            <tr>
+                                <th class="model"><b>MU2Z 900</b></th>
+                                <td class="weight_2">2585</td>
+                                <td class="empty-field"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field dashed" colspan="14" style="width:280px"><div class="range-content-14">MU2Z profi</div></td>
+                                <td class="range-field solid"></td>
+                                <td class="range-field dashed"></td>
+                                <td class="range-field solid"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="table3-container">
+                    <h1>Table 3</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATALOG PAGE -->
         <div data-role="page" id="catalog-page">
-            <!-- glava -->
             <div data-role="header">
+                <!--<a href="#" data-icon="back" data-rel="back">Nazaj</a>-->
+                <a data-icon="back" href="javascript:history.back(1)">Back</a>
                 <h1>Catalog Browser</h1>
             </div>
-
-            <div data-role="content">
-                <h1>PDF lister</h1>
+            <div class="flipbook-viewport">
+                <div class="flipbook_2">
+                    <div id="page1" style="background-image:url(pages/page_1.jpg)"></div>
+                    <div id="page2" style="background-image:url(pages/page_2.jpg)"></div>
+                    <div id="page3" style="background-image:url(pages/page_3.jpg)"></div>
+                    <div id="page4" style="background-image:url(pages/page_4.jpg)"></div>
+                    <div id="page5" style="background-image:url(pages/page_5.jpg)"></div>
+                </div>
             </div>
+        </div>
     </body>
 </html>
