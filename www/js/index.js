@@ -41,6 +41,7 @@ $(document).on('pageshow', '#tables-page', function(event) {
 	if(sessionStorage.getItem('curr_tab') != null){
 		curr_tab = sessionStorage.getItem('curr_tab');
 	}
+
 	$("#" + curr_tab).addClass("ui-btn-active");
 });
 
@@ -78,7 +79,7 @@ $(document).on("pageinit", "#tables-page", function(e) {
 		page = page.split("_")[1];
 
 		$("#catalog-page").data("info", page);
-		$.mobile.changePage("#catalog-page");
+		$.mobile.changePage("#catalog-page", { transition: "none" });
 	});
 
 	//animacija obrob slik
@@ -97,25 +98,112 @@ $(document).on("pageshow", "#catalog-page", function () {
 	if (sessionStorage.getItem("curr_page") != null) {
 		page = sessionStorage.getItem("curr_page");
 	}
+    if(page == 'undefined') page = 1;
 	$('.flipbook_2').turn('page', page);
+
+	$(".flipbook-viewport").css({"height": "94.5%"});
 });
 
 $(document).on("pageinit", "#catalog-page", function () {
+	$(".flipbook-viewport").css({"height": "94.5%"});
+
 	var el = $('.flipbook_2');
     el.turn({
-            // Width
-        width: 1280,
+        // Width
+        width: 1050,
         display: 'single',
         // Height
-        height: 765,
+        height: 730,
         // Elevation
         elevation: 50,
         // Enable gradients
         gradients: true,
+        // Duration
+        duration: 1900,
+        turnCorners: "bl,br"
+    });
+    el.bind({
+        start: function (event, pageObject, corner) {
+            if (corner == 'tr'){
+                event.preventDefault();
+            }
+            $(".video-iconn").hide();
+        },
+        turned: function(event, page, view){
+            console.log(event, page, view);
+            $(".video-iconn").show();
+        }
     });
     el.css({
-        left: 0,
-        top: 0
+        left: 115,
+        top: 13
     });
     $(".flipbook-viewport").find('.page-wrapper').removeClass('ui-page-theme-a');
+
+    //video player
+    $("#popupVideo iframe")
+    	.attr("width", 0)
+        .attr("height", 0);
+
+    $( "#popupVideo" ).on({
+        popupbeforeposition: function() {
+            var size = scale(560, 315, 15, 1);
+            w = size.width;
+            h = size.height;
+            console.log(w, h);
+            $( "#popupVideo iframe" )
+                .attr( "width", w )
+                .attr( "height", h );
+        },
+        popupafteropen: function(){
+            var el = $("video");
+            el[0].play();
+            el.bind('ended', function(){
+                $("#popupVideo").popup("close");
+            });
+        },
+        popupafterclose: function() {
+            $( "#popupVideo iframe" )
+                .attr( "width", 0 )
+                .attr( "height", 0 );
+        }
+    });
+    function scale( width, height, padding, border ) {
+        var scrWidth = $( window ).width() - 30,
+            scrHeight = $( window ).height() - 30,
+            ifrPadding = 2 * padding,
+            ifrBorder = 2 * border,
+            ifrWidth = width + ifrPadding + ifrBorder,
+            ifrHeight = height + ifrPadding + ifrBorder,
+            h, w;
+
+        if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+            w = ifrWidth;
+            h = ifrHeight;
+        } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+            w = scrWidth;
+            h = ( scrWidth / ifrWidth ) * ifrHeight;
+        } else {
+            h = scrHeight;
+            w = ( scrHeight / ifrHeight ) * ifrWidth;
+        }
+
+        return {
+            'width': w - ( ifrPadding + ifrBorder ),
+            'height': h - ( ifrPadding + ifrBorder )
+        };
+    };
+});
+$(document).on('show', '#popupVideo', function(event) {
+    event.preventDefault();
+    alert(1);
+    /* Act on the event */
+});
+
+$(document).on("swipeleft", "#catalog-page", function(e) {
+	$(".flipbook_2").turn("next");
+});
+
+$(document).on("swiperight", "#catalog-page", function(e) {
+	$(".flipbook_2").turn("previous");
 });

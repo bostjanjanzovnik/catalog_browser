@@ -1,19 +1,21 @@
 $(document).on("pageinit", "#lister-page", function () {
     var el = $('.flipbook');
     el.turn({
-            // Width
-        width: 1280,
+        // Width
+        width: 1080,
         display: 'single',
         // Height
-        height: 800,
+        height: 760,
         // Elevation
         elevation: 50,
         // Enable gradients
         gradients: true,
+        // Duration
+        duration: 1900
     });
     el.css({
-        left: 0,
-        top: 0
+        left: 100,
+        top: 20
     })
     el.bind('start',
         function (event, pageObject, corner)
@@ -39,10 +41,6 @@ $(document).on("pageinit", "#lister-page", function () {
     }, 5000);
     $(".flipbook-viewport").find('.page-wrapper').removeClass('ui-page-theme-a');
 });
-$(document).on("pageinit", "#catalog-page", function () {
-
-});
-
 
 function bindClickEvent () {
     $(".flipbook div.page").bind('vclick', function(event) {

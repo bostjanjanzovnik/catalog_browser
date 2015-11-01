@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Catalog Browser</title>
+        <title>Tehnos Catalog Browser</title>
         <meta charset="UTF-8">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -18,7 +18,7 @@
     </head>
     <body>
         <!-- LISTER PAGE -->
-        <div data-role="page" id="lister-page">
+        <div data-role="page" id="lister-page" data-theme="b">
             <div class="flipbook-viewport">
                 <div class="flipbook">
                     <div id="page1" style="background-image:url(pages/page_1.jpg)"></div>
@@ -26,24 +26,29 @@
                     <div id="page3" style="background-image:url(pages/page_3.jpg)"></div>
                     <div id="page4" style="background-image:url(pages/page_4.jpg)"></div>
                     <div id="page5" style="background-image:url(pages/page_5.jpg)"></div>
+                    <div id="page6" style="background-image:url(pages/page_1.jpg)"></div>
+                    <div id="page7" style="background-image:url(pages/page_2.jpg)"></div>
                 </div>
             </div>
         </div>
 
         <!-- TABLES PAGE -->
-        <div data-role="page" id="tables-page">
-            <!--<div data-role="header">
+        <div data-role="page" id="tables-page" data-theme="b">
+            <div data-role="header">
+                <div class="lang-icon" id="lng-en" style="background: url(img/gb.png);"></div>
+                <div class="lang-icon" id="lng-de" style="background: url(img/de.png);"></div>
+                <div class="lang-icon" id="lng-si" style="background: url(img/si.png);"></div>
                 <h1>Tehnos Catalog Browser</h1>
-            </div>-->
-            <div data-role="content">
-                <div data-role="navbar" class="navbar" data-iconpos="right">
+                <div data-role="navbar" class="navbar" data-iconpos="left">
                     <ul>
                         <li><a href="#" id="tab_1" data-icon="grid">UNIVERZALI mulčer</a></li>
                         <li><a href="#" id="tab_2" data-icon="grid">BOČNI mulčer + KOMBINACIJE</a></li>
                         <li><a href="#" id="tab_3" data-icon="grid">TRAVNIŠKI mulčer + NAMENSKI mulčer</a></li>
                     </ul>
                 </div>
+            </div>
 
+            <div data-role="content" data-theme="a">
                 <div id="table1-container">
                     <div id="table1-images-container">
                         <div class="table1-img">
@@ -124,7 +129,7 @@
                                 <td class="weight">304</td>
                                 <td class="empty-field"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -154,7 +159,7 @@
                                 <td class="weight">210</td>
                                 <td class="empty-field"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MULS slim</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -185,7 +190,7 @@
                                 <td class="empty-field"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field solid" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -216,7 +221,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MU profi</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MU profi</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -245,7 +250,7 @@
                                 <td class="empty-field"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field solid" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MULS slim</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -277,7 +282,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field solid" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field solid" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -308,7 +313,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field solid" colspan="5"><div class="range-content-5">MUS</div></td>
+                                <td class="range-field solid" colspan="5" style="width:120px"><div class="range-content-5">MUS</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -337,7 +342,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field solid" colspan="5"><div class="range-content-5">MU profi</div></td>
+                                <td class="range-field solid" colspan="5" style="width:120px"><div class="range-content-5">MU profi</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -364,7 +369,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MULS slim</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MULS slim</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -396,7 +401,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -427,7 +432,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field dashed" colspan="5"><div class="range-content-5">MUS</div></td>
+                                <td class="range-field dashed" colspan="5" style="width:120px"><div class="range-content-5">MUS</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -456,7 +461,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field solid" colspan="6"><div class="range-content-6">MU profi</div></td>
+                                <td class="range-field solid" colspan="6" style="width:140px"><div class="range-content-6">MU profi</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -485,7 +490,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -515,7 +520,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUS</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MUS</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -546,7 +551,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field solid" colspan="6"><div class="range-content-6">MU profi</div></td>
+                                <td class="range-field solid" colspan="6" style="width:140px"><div class="range-content-6">MU profi</div></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
@@ -575,7 +580,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="4"><div class="range-content-4">MUL lahki</div></td>
+                                <td class="range-field dashed" colspan="4" style="width:100px"><div class="range-content-4">MUL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -606,7 +611,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field dashed" colspan="7"><div class="range-content-7">MU profi</div></td>
+                                <td class="range-field dashed" colspan="7" style="width:160px"><div class="range-content-7">MU profi</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -634,7 +639,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="6"><div class="range-content-6">MPL lahki</div></td>
+                                <td class="range-field dashed" colspan="6" style="width:140px"><div class="range-content-6">MPL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -663,7 +668,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field dashed" colspan="9"><div class="range-content-9">MPL lahki</div></td>
+                                <td class="range-field dashed" colspan="9" style="width:200px"><div class="range-content-9">MPL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -689,7 +694,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MU profi</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -715,7 +720,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="6"><div class="range-content-7">MPL lahki</div></td>
+                                <td class="range-field dashed" colspan="6" style="width:140px"><div class="range-content-7">MPL lahki</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -744,7 +749,7 @@
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
-                                <td class="range-field dashed" colspan="9"><div class="range-content-9">MP profi</div></td>
+                                <td class="range-field dashed" colspan="9" style="width:200px"><div class="range-content-9">MP profi</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -770,7 +775,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MU profi</div></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
@@ -800,7 +805,7 @@
                                 <td class="range-field dashed"></td>
                                 <td class="range-field solid"></td>
                                 <td class="range-field dashed"></td>
-                                <td class="range-field dashed" colspan="8"><div class="range-content-8">MU profi</div></td>
+                                <td class="range-field dashed" colspan="8" style="width:180px"><div class="range-content-8">MU profi</div></td>
                                 <td class="range-field solid"></td>
                             </tr>
                         </tbody>
@@ -1630,21 +1635,38 @@
         </div>
 
         <!-- CATALOG PAGE -->
-        <div data-role="page" id="catalog-page">
+        <div data-role="page" id="catalog-page" data-theme="b">
             <div data-role="header">
                 <!--<a href="#" data-icon="back" data-rel="back">Nazaj</a>-->
-                <a data-icon="back" href="javascript:history.back(1)">Back</a>
-                <h1>Catalog Browser</h1>
+                <a data-icon="arrow-l" href="javascript:window.location = '#tables-page'">Back</a>
+                <h1>Tehnos Catalog Browser</h1>
             </div>
             <div class="flipbook-viewport">
                 <div class="flipbook_2">
                     <div id="page1" style="background-image:url(pages/page_1.jpg)"></div>
-                    <div id="page2" style="background-image:url(pages/page_2.jpg)"></div>
+                    <div id="page2" style="background-image:url(pages/page_2.jpg)">
+                    <a href="#popupVideo" data-rel="popup" data-position-to="window" class="video-iconn ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
+                    <!--<a class="video-icon" href="#popupVideo" data-rel="popup" data-position-to="window"></a>--></div>
                     <div id="page3" style="background-image:url(pages/page_3.jpg)"></div>
                     <div id="page4" style="background-image:url(pages/page_4.jpg)"></div>
                     <div id="page5" style="background-image:url(pages/page_5.jpg)"></div>
+                    <div id="page6" style="background-image:url(pages/page_1.jpg)"></div>
+                    <div id="page7" style="background-image:url(pages/page_2.jpg)"></div>
                 </div>
             </div>
+
+            <div data-role="popup" id="popupVideo" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+                <video width="560" height="315" controls autoplay="autoplay">
+                    <source src="videos/Tehnos MGL 220.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
+
+        <!-- VIDEO POPUP
+        <div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+            <iframe src="http://player.vimeo.com/video/41135183" width="497" height="298" seamless></iframe>
+        </div>-->
+
     </body>
 </html>
