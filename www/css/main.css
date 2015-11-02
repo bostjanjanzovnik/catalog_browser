@@ -184,26 +184,29 @@ div[class^='img1_'], div[class^='img2_'] {
 /* ikone za izbiro jezika */
 .lang-icon {
    float: right;
-   width: 32px;
-   height: 32px;
-   margin-top: 5px;
-   margin-right: 20px;
+   width: 40px;
+   height: 40px;
+   margin-top: 2px;
+   margin-right: 35px;
    background-repeat: no-repeat;
-   background-size: 32px 32px !important;
+   background-size: 40px 40px !important;
    cursor: pointer;
 }
 
 /* video ikona */
-.video-iconn {
+.video-ikona {
    position: absolute;
    height: 50px;
    width: 50px;
    right: 130px;
-   top: 20px;
+   top: 3px;
    background-image: url(../img/video-icon.png);
-   background-size: 50px 50px;
+   background-color: transparent !important;
+   background-repeat: no-repeat;
+   background-size: 90% 100%;
+   background-position: center;
+   border: none;
    cursor: pointer;
-   display: none;
 }
 
 /* animacija test
