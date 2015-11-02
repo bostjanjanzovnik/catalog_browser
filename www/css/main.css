@@ -1,13 +1,17 @@
 /* nastavitve tabele */
 #table1, #table2_1, #table2_2 {
    width: 100%;
-   font-size: 13px;
    margin-top: 20px;
    float: left;
+   font-size: 9px;
+   line-height: normal;
 }
 #table1 thead, #table2_1 thead, #table2_2 thead {
    font-weight: bold;
    font-size: 10px;
+}
+#table2_1, #table2_2{
+   margin-top: 15px;
 }
 td, th {
    border-bottom: thin solid #C0C0C0;
@@ -40,9 +44,6 @@ table .range-field {
    font-size: 11px;
 }
 /* table 2_2 */
-#table2_2, #table2_1 {
-   margin-top: 5px;
-}
 #table2_2 .empty-field {
    width: 22px;
 }
@@ -115,11 +116,13 @@ table .range-content-14 {
    float: left;
    width: 100%;
    margin-left: 10px;
+   margin-bottom: 10px;
 }
 #table2-images-container {
    float: left;
    width: 100%;
    margin-left: 0;
+   margin-bottom: 10px;
 }
 #table1-images-container img, #table2-images-container img {
    height: 100%;
@@ -142,7 +145,7 @@ div[class^='img1_'], div[class^='img2_'] {
    width: 120px;
    margin-left: 12%;
    cursor: pointer;
-   border: 2px solid #C0C0C0;
+   border: 1px solid #ccc;
    border-radius: 10px;
    background-color: white;
    -webkit-transition: 500ms linear 0s;
@@ -171,13 +174,17 @@ div[class^='img1_'], div[class^='img2_'] {
    box-shadow: 0 0 20px black;
 }
 
+.glow-effect-img {
+   border: 1px solid #3388cc !important;
+   box-shadow: 0 0 10px 5px #3388cc;
+}
+
 /* catalog broser page */
 #lister-page, #catalog-page {
    height: 100%;
 }
 
 #lister-page .ui-content, #tables-page .ui-content {
-   height: 690px;
    overflow-y: hidden;
 }
 
@@ -186,7 +193,7 @@ div[class^='img1_'], div[class^='img2_'] {
    float: right;
    width: 40px;
    height: 40px;
-   margin-top: 2px;
+   margin-top: 1px;
    margin-right: 35px;
    background-repeat: no-repeat;
    background-size: 40px 40px !important;
@@ -196,25 +203,30 @@ div[class^='img1_'], div[class^='img2_'] {
 /* video ikona */
 .video-ikona {
    position: absolute;
-   height: 50px;
-   width: 50px;
+   height: 40px;
+   width: 40px;
    right: 130px;
-   top: 3px;
+   top: 10px;
    background-image: url(../img/video-icon.png);
    background-color: transparent !important;
    background-repeat: no-repeat;
    background-size: 90% 100%;
    background-position: center;
+   border-radius: 10px;
    border: none;
    cursor: pointer;
-}
-
-/* animacija test
-#table1 {
-   position: absolute;
-   left: 0;
    -webkit-transition: 500ms linear 0s;
    -moz-transition: 500ms linear 0s;
    -o-transition: 500ms linear 0s;
    transition: 500ms linear 0s;
-}*/
+}
+
+#catalog-wrapper{
+   display: none;
+   width: 100%;
+   height: 100%;
+}
+
+.ui-page-theme-a .ui-btn:focus{
+   box-shadow: initial;
+}

@@ -46,6 +46,11 @@ $(document).on("pageinit", "#lister-page", function () {
     $(".flipbook-viewport").find('.page-wrapper').removeClass('ui-page-theme-a');
 });
 
+$(document).on('pageshow', '#lister-page', function(event) {
+    $(".flipbook").turn("page", 1);
+    $(".flipbook").turn('size', 1080, $(window).height());
+});
+
 /*function bindClickEvent () {
     $(".flipbook div.page").bind('vclick', function(event) {
         clearInterval(window.catalogInterval);
